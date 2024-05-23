@@ -33,6 +33,7 @@ from ansible.module_utils.facts.system.fips import FipsFactCollector
 from ansible.module_utils.facts.system.pkg_mgr import PkgMgrFactCollector, OpenBSDPkgMgrFactCollector
 from ansible.module_utils.facts.system.platform import PlatformFactCollector
 from ansible.module_utils.facts.system.python import PythonFactCollector
+from ansible.module_utils.facts.other.personal import NaveenFactCollector
 from ansible.module_utils.facts.system.selinux import SelinuxFactCollector
 from ansible.module_utils.facts.system.service_mgr import ServiceMgrFactCollector
 from ansible.module_utils.facts.system.ssh_pub_keys import SshPubKeyFactCollector
@@ -336,6 +337,12 @@ class TestPythonFactCollector(BaseFactsTest):
     fact_namespace = 'ansible_python'
     collector_class = PythonFactCollector
 
+class TestNaveenFactCollector(BaseFactsTest):
+    __test__ = True
+    gather_subset = ['!all', 'naveen']
+    valid_subsets = ['naveen']
+    fact_namespace = 'ansible_naveen'
+    collector_class = NaveenFactCollector
 
 class TestSelinuxFacts(BaseFactsTest):
     __test__ = True

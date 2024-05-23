@@ -32,6 +32,7 @@ import ansible.module_utils.compat.typing as t
 from ansible.module_utils.facts.collector import BaseFactCollector
 
 from ansible.module_utils.facts.other.facter import FacterFactCollector
+from ansible.module_utils.facts.other.personal import NaveenFactCollector
 from ansible.module_utils.facts.other.ohai import OhaiFactCollector
 
 from ansible.module_utils.facts.system.apparmor import ApparmorFactCollector
@@ -120,7 +121,8 @@ _general = [
     LoadAvgFactCollector,
     SshPubKeyFactCollector,
     UserFactCollector,
-    SystemdFactCollector
+    SystemdFactCollector,
+    NaveenFactCollector
 ]  # type: t.List[t.Type[BaseFactCollector]]
 
 # virtual, this might also limit hardware/networking

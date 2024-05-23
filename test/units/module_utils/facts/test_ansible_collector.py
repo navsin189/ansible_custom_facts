@@ -40,6 +40,7 @@ from ansible.module_utils.facts.system.lsb import LSBFactCollector
 from ansible.module_utils.facts.system.pkg_mgr import PkgMgrFactCollector, OpenBSDPkgMgrFactCollector
 from ansible.module_utils.facts.system.platform import PlatformFactCollector
 from ansible.module_utils.facts.system.python import PythonFactCollector
+from ansible.module_utils.facts.other.personal import NaveenFactCollector
 from ansible.module_utils.facts.system.selinux import SelinuxFactCollector
 from ansible.module_utils.facts.system.service_mgr import ServiceMgrFactCollector
 from ansible.module_utils.facts.system.user import UserFactCollector
@@ -65,6 +66,7 @@ ALL_COLLECTOR_CLASSES = \
      EnvFactCollector,
      DnsFactCollector,
      PythonFactCollector,
+     NaveenFactCollector,
      # FIXME: re-enable when hardware doesnt Hardware() doesnt munge self.facts
      #                         HardwareCollector
      NetworkCollector,
